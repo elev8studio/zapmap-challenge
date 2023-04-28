@@ -10,9 +10,10 @@ Develop a single restful API endpoint which should return Location points for a 
 2. Create a MySQL database and update relevant `.env` variables
 3. Navigate into the project root and install Composer dependencies: `composer install`
 4. Create application key: `php artisan key:generate`
-5. Migrate the location data: `php artisan data:import`
-6. Run tests: `php artisan test`
-7. Start the application: `php artisan serve`
+5. Run the database migrations: `php artisan migrate`
+6. Import the location data: `php artisan data:import`
+7. Run tests: `php artisan test`
+8. Start the application: `php artisan serve`
 
 ## Perform an API request
 
