@@ -49,7 +49,7 @@ class LocationTest extends TestCase
         $response->assertJson(function (AssertableJson $json) {
             $json->has('locations')->where('locations', function (Collection $locations) {
                 $location = $locations->first();
-                $expectKeys = ['radius', 'latitude', 'longitude', 'distance'];
+                $expectKeys = ['radius', 'latitude', 'longitude', 'distance', 'directions'];
                 $gotKeys = array_keys($location);
                 // Each item in the locations array should contain the expected keys
                 return !array_diff_key($expectKeys, $gotKeys);
