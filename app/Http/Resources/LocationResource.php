@@ -15,9 +15,10 @@ class LocationResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->name,
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
+            'name' => $this->resource->name,
+            'latitude' => $this->resource->latitude,
+            'longitude' => $this->resource->longitude,
+            'distance' => round($this->resource->distance, 1),
         ];
     }
 }
