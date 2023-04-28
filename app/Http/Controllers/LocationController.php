@@ -11,7 +11,11 @@ class LocationController extends Controller
 {
     public function show(LocationRequest $request): JsonResponse
     {
-        $locations = Location::radius($request->latitude, $request->longitude, $request->radius)->get();
+        $lat = $request->input('latitude');
+        $long = $request->input('longitude');
+        $rad = $request->input('radius');
+
+        $locations = Location::radius($lat, $long, $rad)->get();
 
         return response()->json([
             'locations' => LocationResource::collection($locations),
